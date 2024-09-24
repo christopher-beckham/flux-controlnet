@@ -217,9 +217,7 @@ def log_validation(
         validation_image = make_alpha_all_ones(validation_image) # will be RGBA
 
         if sketchify:
-            cond_image = ImageOps.invert(
-                lineart(validation_image.convert("RGB")).resize(validation_image.size)
-            )
+            cond_image = lineart(validation_image.convert("RGB")).resize(validation_image.size)
         else:
             cond_image = validation_image.convert("RGB")
 
